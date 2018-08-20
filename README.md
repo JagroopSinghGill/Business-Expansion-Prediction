@@ -1,31 +1,10 @@
 # Business-Expansion-Prediction
-Now days, most of the
-information published on the Web is
-published on social media platforms and
-represented through social networks such
-as Facebook or Twitter, to name only the
-main ones. Startup companies are flooding
-the Information Technology market day
-by day.2018 holds a lot of challenges for
-business growth and expansion, and smart
-CEOs and investors should position
-themselves for a highly volatile year.
-Companies are looking up for their
-business expansion for better revenue.
-Companies do a lot of analysis on customer
-feedback but it is not sufficient enough to
-gather sufficient information to decide
-where to put their next checkpoints. A
-better and responsive system is required to
-suggest new location based on user
-experience on social webs. It will save a
-huge amount of time and work required to
-store and process a large number of user
-feedback and reviews. Our system is based
-on people’s tweets. Data mining from
-twitter and plot then on a map scanning
-through an algorithm and find out the user
-interest in company and based on that
-suggesting a new location to the company
-to expand their business. It is will help the organizations to predict
-the best location for the product to launch.
+
+Nowadays, most of the information published on the Web is published on social media platforms and represented through social networks such as Facebook or Twitter, to name only the main ones. Startup companies are flooding the Information Technology market day by day. 2018 holds a lot of challenges for business growth and expansion, and smart CEOs and investors should position themselves for a highly volatile year. Companies are looking up for their business expansion for better revenue. Companies do a lot of analysis on customer feedback but it is not sufficient enough to gather sufficient information to decide where to put their next checkpoints. 
+
+A better and responsive system is required to suggest new locations based on user experience on social webs. It will save a huge amount of time and work required to store and process a large number of user feedback and reviews. Our system is based on people’s tweets. Data mining from twitter and plotting them on a map scanning through an algorithm and finding out the user interest in company and based on that suggesting a new location for the company to expand their business. It is will help the organizations to predict the best locations for the product to launch.
+
+
+# Architecture
+
+For this project we wanted to get the output if there is a positive response from people about a certain product or a brand and how much is the response about the product. To get this we used social networking platform Twitter as the source of data. Now with the machine learning the tweets that are collected are divided into positive, neutral and negative. The tweets that are fetched are stored in the database. Then the data is evaluated and classified among the positive negative and neutral options. Then the locations from which the tweets have been generated are mapped on the world map using Google API and this happens in real time. This way we get to know which part of the world is giving what sort of response. The mapped tweets show the density of tweets which area has maximum response about the product. This helps the new upcoming businesses to decide on what area could be best for the launch of the product. 
