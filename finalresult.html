@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+<title>Business Expansion Prediction</title>
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+    <meta charset="utf-8">
+
+    <title>Marker Clustering</title>
+
+    <style>
+
+      /*Always set the map height explicitly to define the size of the div
+
+       * element that contains the map. */
+
+      #map {
+
+        height: 100%;
+
+	  }
+
+      /* Optional: Makes the sample page fill the window. */
+
+      html, body {
+
+        height: 100%;
+
+        margin: 0;
+
+        padding: 0;
+
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="map"></div>
+
+    <script>
+
+
+
+      function initMap() {
+
+
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+
+          zoom:2,
+
+          center: {lat: 26.8206, lng: 30.8025}
+
+        });
+
+
+
+        // Create an array of alphabetical characters used to label the markers.
+
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+
+
+        // Add some markers to the map.
+
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+
+        // create an array of markers based on a given "locations" array.
+
+        // The map() method here has nothing to do with the Google Maps API.
+
+        var markers = locations.map(function(location, i) {
+
+          return new google.maps.Marker({
+
+            position: location,
+
+            label: labels[i % labels.length]
+
+          });
+
+        });
+
+
+
+        // Add a marker clusterer to manage the markers.
+
+        var markerCluster = new MarkerClusterer(map, markers,
+
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+      }
+
+      var locations = [
+
+{"_id":{"$oid":"5ac2272147ad930273770e4a"},"lat":4.535277,"country":"Brunei","tweet":"OMG! Check out Samsam’s video! #TikTok \u0026gt;  https://t.co/9TCfgDFiC9","lng":114.727669}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e4b"},"lat":36.89540119999999,"country":"United States","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":-76.1476538}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e4c"},"lat":-22.95764,"country":"Namibia","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":18.49041}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e4d"},"lat":37.09024,"country":"United States","tweet":"#iOS #App #Free - 10 Best paid iPhone and iPad apps on sale for free right now https://t.co/3XFUo4RBSB https://t.co/FBsSDoRsiS","lng":-95.712891}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e4e"},"lat":-30.559482,"country":"South Africa","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":22.937506}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e4f"},"lat":5.980408,"country":"Malaysia","tweet":"RT @SwitchTM: iPhone 6 with 32GB Storage Drops Down to RM1,299 https://t.co/NYFsiFa3Ns via @lowyatnet","lng":116.0734568}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e50"},"lat":14.5995124,"country":"Philippines","tweet":"RT @iPhoneHackx: 20 New iOS 11.3 Features for iPhone and iPad https://t.co/xunCyqRx5m #iOS11 https://t.co/h32n5UzFAz","lng":120.9842195}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e51"},"lat":37.7021521,"country":"United States","tweet":"That’s the FBI agent clocking in and out https://t.co/KohFO94GrC","lng":-121.9357918}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e52"},"lat":-26.2041028,"country":"South Africa","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":28.0473051}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e53"},"lat":40.4167754,"country":"Spain","tweet":"RT @LeMeSpy: If I Get This I will Give away My Iphone 6Plus https://t.co/W38RKFjrgI","lng":-3.7037902}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e54"},"lat":55.78320919999999,"country":"United Kingdom","tweet":"New iphone ordered \u0026amp; new case to go with it.....roll on Wednesday til it gets delivered ☺️","lng":-3.9810968}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e55"},"lat":36.0605176,"country":"United States","tweet":"jual iPhone case vintage for only 95k,bisa custom :) cek favs ~~ ##iphonecase #vintage","lng":-95.8846447}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e56"},"lat":36.0640669,"country":"Japan","tweet":"To all facebook users! https://t.co/L0haaA9qTq #PR #senden #mobile #iphone #facebook #fb","lng":136.2194938}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e57"},"lat":9.0764785,"country":"Nigeria","tweet":"RT @CaptainArinze: Imagine Nokia and BlackBerry staring at the IPhone and Samsung, wondering how the attention shifted to those new comers…","lng":7.398574}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e58"},"lat":46.729553,"country":"United States","tweet":"I've decided to reclaim my life – by using an old Nokia phone https://t.co/TPwBTls7U2","lng":-94.6858998}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e59"},"lat":40.7830603,"country":"United States","tweet":"$1,185.00   NEW  iPhone X 256GB Silver Unlocked AT\u0026amp;T Cricket T-mobile GSM International  #IphoneX #Deals… https://t.co/G0Z2YhQgQh","lng":-73.9712488}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e5a"},"lat":32.1656221,"country":"United States","tweet":"iPhone 7, you can stop overheating. Cool down, it’s not even been a year. I know I’m on you a lot. I’m sorry, it’s… https://t.co/vagqvvFM0t","lng":-82.9000751}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e5b"},"lat":38.9071923,"country":"United States","tweet":"Galaxy S9 vs. iPhone X: Which to buy ##CNET https://t.co/9L4RvHBOly @vanehand https://t.co/5rroAtwj8H","lng":-77.0368707}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e5c"},"lat":-32.8938109,"country":"South Africa","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":27.4203974}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e5d"},"lat":6.5243793,"country":"Nigeria","tweet":"RT @CaptainArinze: Imagine Nokia and BlackBerry staring at the IPhone and Samsung, wondering how the attention shifted to those new comers…","lng":3.3792057}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e5e"},"lat":43.6395111,"country":"Canada","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":-79.62693759999999}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e5f"},"lat":31.5203696,"country":"Pakistan","tweet":"@PrinceChandraIN #askpc\nRAPID FIRE\n1. iphone x or samsung note 8\n2.Yamaha ybr or honda 125\n3.1 million subscribers… https://t.co/INNTfErwh0","lng":74.35874729999999}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e60"},"lat":40.7127753,"country":"United States","tweet":"Apple iPhone 4s A1387 White Smartphone Locked https://t.co/31e1990oeg https://t.co/MdXJUB6Vfv","lng":-74.0059728}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e61"},"lat":37.09024,"country":"United States","tweet":"How can I get CarPlay to accept Garmin from iPhone 7?","lng":-95.712891}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e62"},"lat":53.38112899999999,"country":"United Kingdom","tweet":"#2: Lightning Cable (0.3 M 1M 1.8M 9 Pack ) SMALLElectric IPhone Charger to Sync USB Cord for Apple iPhone 7 plus 6… https://t.co/ltR9mUpLwk","lng":-1.470085}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e63"},"lat":41.8781136,"country":"United States","tweet":"RT @Vyyyper: 🔥NEW VIDÈO🔥 my Top 5 apps I use on iPhone! @Starbucks @SpotHero @Bitly @Fandango @hqtrivia @BLOGTUBERS @YouTbrsNOW @_NewYoutub…","lng":-87.6297982}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e64"},"lat":52.3555177,"country":"United Kingdom","tweet":"@kingkudity Iphone usb chargers on sale check out new post","lng":-1.1743197}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e65"},"lat":20.593684,"country":"India","tweet":"[180402 | Streaming] To increase ratings, watch the drama on 'myK app' instead of aqstream\n\nApp Dwnld link:\nPC:… https://t.co/V4eYyLx38g","lng":78.96288}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e66"},"lat":37.09024,"country":"United States","tweet":"eBay: Apple iPhone 5c - 16GB - Pink (Unlocked) (CA) https://t.co/L1D2Sb3yF6 https://t.co/Mo4ovIaIFX","lng":-95.712891}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e67"},"lat":32.68,"country":"United States","tweet":"RT @PatCarryD: iPhone 7 Plus in Ballistic Gel vs .50 cal | #tactical https://t.co/UgWkn7tQ9g","lng":-79.9599999}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e68"},"lat":40.7581722,"country":"United States","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":-73.97037900000001}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e69"},"lat":39.0457549,"country":"United States","tweet":"RT @kathryn_legit: If I became a professor, I would definitely rename my phone “Professor Liggett’s iPhone” https://t.co/K0LVg9uMAJ","lng":-76.64127119999999}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e6a"},"lat":41.8781136,"country":"United States","tweet":"@_lexiochoa I have AT\u0026amp;T. Got the iPhone X, insurance, the plan to upgrade every 24 months and unlimited data. Like… https://t.co/UqPV7nb9dl","lng":-87.6297982}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e6b"},"lat":7.946527,"country":"Ghana","tweet":"RT @KimlyKesseh: My mum's birthdayis 10th April I want to surprise her with an iPhone 7 . Pls Retweet and Like this for me to Get this for…","lng":-1.023194}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e6c"},"lat":51.4826537,"country":"Netherlands","tweet":"RT @MarzBarGaming: Giving away a £1000 iPhone X in the VLOG Tonight but Twitter, get the heads up first. Retweet and Click the link to ente…","lng":5.2321687}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e6d"},"lat":-26.2041028,"country":"South Africa","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":28.0473051}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e6e"},"lat":-30.559482,"country":"South Africa","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":22.937506}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e6f"},"lat":9.0764785,"country":"Nigeria","tweet":"RT @GadgetroNG: USA USED IPHONE PRICES\niPhone 5 64gb - 48k\niPhone 6 16gb - 83k\niPhone 6 64gb - 93k\niPhone 7 128gb - 170k\niPhone 7+ 128gb -…","lng":7.398574}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e70"},"lat":8.5241391,"country":"India","tweet":"Attempts to make the popular iPhone run on Windows Mobile?\nRead more at: https://t.co/N0T8DM5lL2 https://t.co/N0T8DM5lL2","lng":76.9366376}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e71"},"lat":24.7135517,"country":"Saudi Arabia","tweet":"Just Downloaded iPhone X PSD MOCKUP FREE COLLECTION https://t.co/v0mTh3dMDk via @bthemez","lng":46.6752957}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e72"},"lat":36.778261,"country":"United States","tweet":"FL Find: ‘Nothing Else Like This on the Planet’\n\nFrom The Weather Channel iPhone App https://t.co/AMr7JvxsNw https://t.co/Fiz5Kp6LTy","lng":-119.4179324}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e73"},"lat":40.7127753,"country":"United States","tweet":"Baseus MFi iPhone X 8 Plus/7/6/5 Lightning USB Charger Charging Cable Data Cord: 10.99$… https://t.co/LwORZKhVr0","lng":-74.0059728}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e74"},"lat":30.0444196,"country":"Egypt","tweet":"RT @MarzBarGaming: Giving away a £1000 iPhone X in the VLOG Tonight but Twitter, get the heads up first. Retweet and Click the link to ente…","lng":31.2357116}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e75"},"lat":38.2526647,"country":"United States","tweet":"Talking to machines will be an even bigger deal than the iPhone, says Gary Vaynerchuk - https://t.co/YZTzb1mR3N","lng":-85.7584557}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e76"},"lat":55.378051,"country":"United Kingdom","tweet":"Torn between the iPhone X and Galaxy S9? Here's how to choose     - CNET https://t.co/h8s31VSICQ","lng":-3.435973}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e77"},"lat":41.8781136,"country":"United States","tweet":"RT @followforeman: How Local Governments Can Prevent Cyberattacks, via @nytimes https://t.co/dS0qbQi19W","lng":-87.6297982}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e78"},"lat":37.6891754,"country":"United States","tweet":"Htc Isnt Done Making Killer Smartphones Just Yet - Shared from https://t.co/EyG0M5cXYo. [https://t.co/wpBI6OgkVu] https://t.co/jk9AhuVG7j","lng":-97.2436081}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e79"},"lat":54.5259614,"country":"Canada","tweet":"Muslim states in #middleEast build anything?\n\n#rockThrowing\n\n#p2 #tcot #sgp #teaparty #uniteblue #progressive… https://t.co/gwHeIEnAqE","lng":-105.2551187}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e7a"},"lat":51.5073509,"country":"United Kingdom","tweet":"That’s your email LMAOO 🤣 https://t.co/qP4qSys4Zz","lng":-0.1277583}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e7b"},"lat":43.0389025,"country":"United States","tweet":"I'm mad I lost my Bluetooth iPhone headphones.","lng":-87.9064736}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e7c"},"lat":55.378051,"country":"United Kingdom","tweet":"eBay: Apple iPhone 6s - 64GB - Space Grey (Unlocked) https://t.co/6wdYawYOg0 https://t.co/EQF7BEwvrM","lng":-3.435973}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e7d"},"lat":35.6894875,"country":"Japan","tweet":"RT @tomwarren: I’m moving back to Windows Phone permanently. Got bored of all the apps available on the iPhone https://t.co/Od6DhQ8ZQ0","lng":139.6917064}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e7e"},"lat":40.7127753,"country":"United States","tweet":"Baseus MFi iPhone X 8 Plus/7/6/5 Lightning USB Charger Charging Cable Data Cord: 10.99$… https://t.co/GZZtQJkv8R","lng":-74.0059728}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e7f"},"lat":63.4305149,"country":"Norway","tweet":"Intense iPhone Thriller - Unsane (2018) Movie Review: https://t.co/otO4TZQJGK via @YouTube","lng":10.3950528}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e80"},"lat":20.593684,"country":"India","tweet":"[180402 | Streaming] To increase ratings, watch the drama on 'myK app' instead of aqstream\n\nApp Dwnld link:\nPC:… https://t.co/94snU0yWNg","lng":78.96288}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e81"},"lat":55.378051,"country":"United Kingdom","tweet":"RT @MorgzHudson: If you don’t have your iPhone in Low Power Mode 24/7, you’re doing it wrong...","lng":-3.435973}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e82"},"lat":52.1359735,"country":"United Kingdom","tweet":"Do you have an older Apple iPhone? There's an upgrade with good news \nhttps://t.co/l1aRleIWeW #IO17 https://t.co/B3bmNux8NO","lng":-0.4666565}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e83"},"lat":22.543096,"country":"China","tweet":"How To Fix iPhone 7 No Service Problem - LOOK HERE! https://t.co/PQolkwBrSM","lng":114.057865}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e84"},"lat":10.2157379,"country":"Costa Rica","tweet":"RT @intexolteam: 180402 [STREAMING LINK]\nTo increase views:\nPC https://t.co/6eVu9yecem\nAndroid: https://t.co/9Ujk40eCUD\nIos https://t.co/u5…","lng":-83.7927273}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e85"},"lat":43.0831301,"country":"United States","tweet":"@weatherchannel what’s with the radar on the iPhone? Africa?","lng":-73.7845651}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e86"},"lat":40.7830603,"country":"United States","tweet":"$749.99 Apple iPhone 8 Plus - 64GB - Silver (Boost Mobile) A1864 (CDMA + GSM) #iPhone8 #Deals… https://t.co/XuMQJxJ4l1","lng":-73.9712488}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e87"},"lat":20.593684,"country":"India","tweet":"RT @TeamEXOIndia: [180402 | Streaming] To increase ratings, watch the drama on 'myK app' instead of aqstream\n\nApp Dwnld link:\nPC: https://t…","lng":78.96288}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e88"},"lat":-26.2041028,"country":"South Africa","tweet":"RT @UnderRockStudio: Samsung Galaxy S8+ vs iPhone 7 Plus Boiling Hot Water Test https://t.co/pjnWuKl0el","lng":28.0473051}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e89"},"lat":51.31475930000001,"country":"United Kingdom","tweet":"@therawrdrobe I wouldn’t say it’s the most affordable but I love my Olympus Pen EPL8 or iPhone 7 Plus cameras are p… https://t.co/JJuWYwBzmD","lng":-0.5599501}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e8a"},"lat":37.3229978,"country":"United States","tweet":"@Sh1n1ngn1ghtS We'd like to look into this. To make sure we're on the same page, when the iPhone locks while on a c… https://t.co/Il3NO6FnwE","lng":-122.0321823}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e8b"},"lat":-33.77963,"country":"Australia","tweet":"RT @JonyIveParody: “Innovation.” https://t.co/5U3Cuzo4kk","lng":151.10253}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e8c"},"lat":36.277781,"country":"United States","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":-95.8219924}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e8d"},"lat":51.5073509,"country":"United Kingdom","tweet":"If it’s not your email then it’s the village people testing their new sim card https://t.co/qP4qSys4Zz","lng":-0.1277583}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e8e"},"lat":40.7127753,"country":"United States","tweet":"Apple iPhone 3GS - 16GB - Black (AT\u0026amp;T) A1303 (GSM) Used - 'As Is' https://t.co/SfImsi19p2 https://t.co/VL6Agcv8ow","lng":-74.0059728}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e8f"},"lat":40.7127753,"country":"United States","tweet":"Apple iPhone 6 - 64GB - Space Gray (Verizon) UNLOCKED A1549 (CDMA + GSM) https://t.co/srCdimMf7m https://t.co/xssPqZrJoG","lng":-74.0059728}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e90"},"lat":40.7127753,"country":"United States","tweet":"iphone 7 sprint 128gb cracked screen. Works fine https://t.co/wIxmYEC9SK https://t.co/L7xB9yeaT8","lng":-74.0059728}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e91"},"lat":40.7127753,"country":"United States","tweet":"A striking + universal statement: “Surveillance is a critical but neglected piece of health systems,” “Without the… https://t.co/FXOdDkrhOW","lng":-74.0059728}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e92"},"lat":37.6891754,"country":"United States","tweet":"9 Things Most iPhone Users Are Getting Wrong https://t.co/2pPS7AuiFG","lng":-97.2436081}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e93"},"lat":51.556186,"country":"United Kingdom","tweet":"Torn between the iPhone X and Galaxy S9? Here's how to choose - CNET https://t.co/MXWEEl4eQu","lng":0.251986}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e94"},"lat":-26.0218177,"country":"South Africa","tweet":"RT @ThatKhanyoGuyy: The iPhone 5 isn’t waterproof at all wena boyzin toyzin 💀 https://t.co/Q6VY0ltrHm","lng":27.9307584}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e95"},"lat":39.1031182,"country":"United States","tweet":"RT @sabriinaa_22: Should I get the iPhone 8 or iPhone 8 Plus?","lng":-84.5120196}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e96"},"lat":-26.2041028,"country":"South Africa","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":28.0473051}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e97"},"lat":55.378051,"country":"United Kingdom","tweet":"iPhone Touch Screen Not Working? Here’s How to Fix It https://t.co/aL0TOfQfsK #AppleTips","lng":-3.435973}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e98"},"lat":34.8504426,"country":"United States","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":-82.3994795}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e99"},"lat":45.5016889,"country":"Canada","tweet":"Smartphone face-off: Galaxy S9 Intelligent Scan vs iPhone Face ID https://t.co/YxoiukPHU1 https://t.co/EODgRQBHFf","lng":-73.567256}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e9a"},"lat":-26.2041028,"country":"South Africa","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":28.0473051}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e9b"},"lat":30.157458,"country":"Pakistan","tweet":"Help Pick My New Logo! iPhone Passcode Bypass Leaks \u0026amp; More News! https://t.co/6x5VABzJg7 https://t.co/msNG8rMQr3","lng":71.5249154}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e9c"},"lat":53.4083714,"country":"United Kingdom","tweet":"Find Joy https://t.co/O9YTqauhHp via @redbubble","lng":-2.9915726}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e9d"},"lat":20.593684,"country":"India","tweet":"@Iamsamirarora Apple caught intentionally slowing down old iphones by software update to increase their new iPhone sales.","lng":78.96288}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e9e"},"lat":-8.7940956,"country":"Indonesia","tweet":"These Days (feat. Jess Glynne, Macklemore \u0026amp; Dan Caplen) - Rudimental - JOOX https://t.co/D02NGZbRPi","lng":115.2301618}
+
+,{"_id":{"$oid":"5ac2272147ad930273770e9f"},"lat":-30.559482,"country":"South Africa","tweet":"RT @ThatKhanyoGuyy: The iPhone 5 isn’t waterproof at all wena boyzin toyzin 💀 https://t.co/Q6VY0ltrHm","lng":22.937506}
+
+,{"_id":{"$oid":"5ac2272147ad930273770ea0"},"lat":29.4457849,"country":"United States","tweet":"RT @TheSemut: When you're tired of all the Iphone vs Android bullshit https://t.co/FIHcPjyovS","lng":-98.4959969}
+
+,{"_id":{"$oid":"5ac2272147ad930273770ea1"},"lat":36.1190488,"country":"United States","tweet":"Kid, anyone can dump the iPhone anytime. It’s you that’s holding the little guys data hostage and selling it to bad… https://t.co/ayl9dHEHSc","lng":-97.06906649999999}
+
+,{"_id":{"$oid":"5ac2272147ad930273770ea2"},"lat":5.6037168,"country":"Ghana","tweet":"RT @JACKWHERERU: And you are BEAUTY! https://t.co/UyYAmgnFjf","lng":-0.1869644}
+
+,{"_id":{"$oid":"5ac2272147ad930273770ea3"},"lat":31.9685988,"country":"United States","tweet":"RT @GlowTip: Should I announce the iPhone 8 Plus winner tomorrow!? Follow @GlamourGoaIs for extra entries!!! https://t.co/YQYnASfvAf","lng":-99.9018131}
+
+,{"_id":{"$oid":"5ac2272147ad930273770ea4"},"lat":39.6791234,"country":"United States","tweet":"RT @brunos_01: @tati_amorim33 Iphone 8","lng":-75.6526712}
+
+,{"_id":{"$oid":"5ac2272147ad930273770ea5"},"lat":38.8338816,"country":"United States","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":-104.8213634}
+
+,{"_id":{"$oid":"5ac2272147ad930273770ea6"},"lat":40.1455954,"country":"United States","tweet":"*immediately buys iphone X* https://t.co/3Yb7FzmnnY","lng":-82.9816141}
+
+,{"_id":{"$oid":"5ac2272147ad930273770ea7"},"lat":15.870032,"country":"Thailand","tweet":"RT @intexolteam: 180402 [STREAMING LINK]\nTo increase views:\nPC https://t.co/6eVu9yecem\nAndroid: https://t.co/9Ujk40eCUD\nIos https://t.co/u5…","lng":100.992541}
+
+,{"_id":{"$oid":"5ac2272147ad930273770ea8"},"lat":51.5144077,"country":"United Kingdom","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":-0.1173766}
+
+,{"_id":{"$oid":"5ac2272147ad930273770ea9"},"lat":-23.3072476,"country":"South Africa","tweet":"RT @UnderRockStudio: RIP  to another iPhone 8 ⚰️⚰️⚰️😇😇 https://t.co/tWf92gjdnt","lng":30.7062535}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eaa"},"lat":9.081999,"country":"Nigeria","tweet":"#Top3Apps for #FemaleOAPSearch\n\nTwitter Web Client 51%\nTwitter for Android 22%\nTwitter for iPhone 20%","lng":8.675277}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eab"},"lat":27.950575,"country":"United States","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":-82.4571776}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eac"},"lat":-30.559482,"country":"South Africa","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":22.937506}
+
+,{"_id":{"$oid":"5ac2272147ad930273770ead"},"lat":31.7709233,"country":"Israel","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":35.2284626}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eae"},"lat":1.352083,"country":"Singapore","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":103.819836}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eaf"},"lat":40.685583,"country":"United States","tweet":"@I_Am_Dmk You have an iPhone 7 and you want a P10? Most people would say you are crazy babe.","lng":-73.982016}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eb0"},"lat":33.783315,"country":"United States","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":-84.3831166}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eb1"},"lat":38.963745,"country":"Turkey","tweet":"DO NOT MISS THIS Website, Best of High Quality Products KW18 Waterproof Bluetooth Smart Watch Sim Phone Mate For A https://t.co/Fe4PTeM84V","lng":35.243322}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eb2"},"lat":39.9525839,"country":"United States","tweet":"RT @SonnyBunch: Dearest Martha,\n\nWe are entering week 39 of I Can’t Believe This Person I Don’t Like Got Hired To Write Words For Pay Twitt…","lng":-75.1652215}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eb3"},"lat":8.4542363,"country":"Philippines","tweet":"@jncmlnn Rebonded bay haha new iphone girl pjud 😂😍","lng":124.6318977}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eb4"},"lat":39.660121,"country":"United States","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":-104.8507545}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eb5"},"lat":-25.7478676,"country":"South Africa","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":28.2292712}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eb6"},"lat":52.5298126,"country":"Germany","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":13.3970964}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eb7"},"lat":46.227638,"country":"France","tweet":"I love my iPhone 8 plus https://t.co/r4oTp7A5za","lng":2.213749}
+
+,{"_id":{"$oid":"5ac2272147ad930273770eb8"},"lat":48.7904472,"country":"Germany","tweet":"What to Know About the iPhone's New iOS 11.3 Privacy Features https://t.co/34ODvTIxaS https://t.co/lpQ2NU08W5","lng":11.4978895}
+
+,{"_id":{"$oid":"5ac2272247ad930273770eb9"},"lat":-26.1075663,"country":"South Africa","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":28.0567007}
+
+,{"_id":{"$oid":"5ac2272247ad930273770eba"},"lat":13.7563309,"country":"Thailand","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":100.5017651}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ebb"},"lat":40.46366700000001,"country":"Spain","tweet":"#RelámpagoOriental #Dios #Biblia #Jesús #Evangelio\nAndroid app : https://t.co/CiE6HjoVRd\niPhone app :… https://t.co/o1x17jA0OG","lng":-3.74922}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ebc"},"lat":15.870032,"country":"Thailand","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":100.992541}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ebd"},"lat":33.58009,"country":"United States","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":-84.64213699999999}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ebe"},"lat":10.2157379,"country":"Costa Rica","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":-83.7927273}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ebf"},"lat":49.3495621,"country":"Ukraine","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":33.6356175}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ec0"},"lat":25.0700428,"country":"Pakistan","tweet":"DocumentWriter for #MicrosoftOffice - #Word \u0026amp; #PDF for #iPhone and #iPad\nhttps://t.co/MusB1cyAjO","lng":67.2847875}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ec1"},"lat":50.2266509,"country":"Russia","tweet":"YouTube https://t.co/GVcgCzKsG3","lng":136.895263}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ec2"},"lat":14.8184812,"country":"India","tweet":"I liked a @YouTube video https://t.co/p9EOylW8dB Android Phones Vs iPhone X Bezels? The Notch Game 🔥🔥🔥","lng":74.1416127}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ec3"},"lat":40.6781784,"country":"United States","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":-73.9441579}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ec4"},"lat":35.4625901,"country":"Japan","tweet":"dropped my phone at the lobby jn aftnoon sebab excited mail dah sampai 😭 and it caused a cute ass dent at the corne… https://t.co/yLkHaeviUZ","lng":138.6543757}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ec5"},"lat":6.9270786,"country":"Sri Lanka","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":79.861243}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ec6"},"lat":-26.2761,"country":"South Africa","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":27.95298}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ec7"},"lat":51.620475,"country":"United Kingdom","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":0.3071749}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ec8"},"lat":28.394857,"country":"Nepal","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":84.12400799999999}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ec9"},"lat":36.01312350000001,"country":"Algeria","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":0.1401381}
+
+,{"_id":{"$oid":"5ac2272247ad930273770eca"},"lat":36.9614181,"country":"United States","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":-76.38681799999999}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ecb"},"lat":25.2048493,"country":"United Arab Emirates","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":55.2707828}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ecc"},"lat":-0.789275,"country":"Indonesia","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":113.921327}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ecd"},"lat":35.907757,"country":"South Korea","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":127.766922}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ece"},"lat":-23.5505199,"country":"Brazil","tweet":"RT @nct_styles: RIP JOHNNY IPHONE X 😂 https://t.co/ZQbIRXX1PT","lng":-46.63330939999999}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ecf"},"lat":10.2157379,"country":"Costa Rica","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":-83.7927273}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ed0"},"lat":46.3747158,"country":"United States","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":-120.3208563}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ed1"},"lat":-0.789275,"country":"Indonesia","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":113.921327}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ed2"},"lat":15.2286861,"country":"Thailand","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":104.8564217}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ed3"},"lat":13.794185,"country":"El Salvador","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":-88.89653}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ed4"},"lat":39.9065017,"country":"United States","tweet":"RT @alsunna: It's finally here!! New \"Islam Alsunna\" iPhone/iPad App with new features:\n\nNew Qur’an Tab (Listen, Read Share all or any Sura…","lng":-75.27157319999999}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ed5"},"lat":15.870032,"country":"Thailand","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":100.992541}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ed6"},"lat":40.46366700000001,"country":"Spain","tweet":"✝🛐 #RelámpagoOriental #Dios #Biblia #Jesús #Evangelio \nAndroid app : https://t.co/CiE6HjoVRd\niPhone app :… https://t.co/Tr5NEl05tv","lng":-3.74922}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ed7"},"lat":51.5073509,"country":"United Kingdom","tweet":"RT @BC_Lostproperty: Retweeted Paul (@paultmadden):\n\n@CabLostProperty @BC_Lostproperty RTRTRTRTRT please ladies and gentleman LOST IPHONE 📱…","lng":-0.1277583}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ed8"},"lat":12.879721,"country":"Philippines","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":121.774017}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ed9"},"lat":50.503887,"country":"Belgium","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":4.469936}
+
+,{"_id":{"$oid":"5ac2272247ad930273770eda"},"lat":35.907757,"country":"South Korea","tweet":"[STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/CvSQnE549Z\n🐻… https://t.co/YUNdVrGErn","lng":127.766922}
+
+,{"_id":{"$oid":"5ac2272247ad930273770edb"},"lat":10.2157379,"country":"Costa Rica","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":-83.7927273}
+
+,{"_id":{"$oid":"5ac2272247ad930273770edc"},"lat":-25.6051205,"country":"South Africa","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":28.3929417}
+
+,{"_id":{"$oid":"5ac2272247ad930273770edd"},"lat":22.572646,"country":"India","tweet":"I liked a @YouTube video https://t.co/Q5Wc0bLJGK Android Phones Vs iPhone X Bezels? The Notch Game 🔥🔥🔥","lng":88.36389500000001}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ede"},"lat":38.963745,"country":"Turkey","tweet":"DO NOT MISS THIS Website, Best of High Quality Products Bluetooth Smart Wrist Watch Phone Mate Camera For IOS Andr https://t.co/VbplVJDaNe","lng":35.243322}
+
+,{"_id":{"$oid":"5ac2272247ad930273770edf"},"lat":15.870032,"country":"Thailand","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":100.992541}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ee0"},"lat":34.0522342,"country":"United States","tweet":"Lee Burrows Check out the Best Company unlockfusion #unlockcode #samsung direct source #apple #iphone .10cent Unloc… https://t.co/FT6gCJ4ytI","lng":-118.2436849}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ee1"},"lat":38.2009055,"country":"United States","tweet":"RT @SthAmerica: My FREE APP for South America! Android https://t.co/W97w9GV1z3 iPhone https://t.co/tyWyG58LOQ Please download, share \u0026amp; retw…","lng":-84.87328350000001}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ee2"},"lat":6.5243793,"country":"Nigeria","tweet":"iPhone 6 128gig for sale. Kindly help me retweet my buyer might be on your TL https://t.co/QDDIs3j3tB","lng":3.3792057}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ee3"},"lat":53.525262,"country":"Canada","tweet":"[STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/DFxxggy1vo\n🐻… https://t.co/vPlphRC2y8","lng":-113.5271987}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ee4"},"lat":1.2814381,"country":"Singapore","tweet":"RT @businessinsider: 5 tips for taking better photos on your iPhone https://t.co/mMD0W28moT","lng":103.8491388}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ee5"},"lat":53.9807737,"country":"Ireland","tweet":"RT @cmoloturnstile: Good news! Just upgrade your iPhone and Apple Watch to iOS 11.3 and watchOS 4.3, you can take the metro/bus via Apple P…","lng":-6.714881999999999}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ee6"},"lat":-6.17511,"country":"Indonesia","tweet":"RT @intexolteam: 180402 [STREAMING LINK]\nTo increase views:\nPC https://t.co/6eVu9yecem\nAndroid: https://t.co/9Ujk40eCUD\nIos https://t.co/u5…","lng":106.8650395}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ee7"},"lat":15.870032,"country":"Thailand","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":100.992541}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ee8"},"lat":40.46366700000001,"country":"Spain","tweet":"https://t.co/Y1H1qatSVx //Price: $12.95 \u0026amp; FREE Shipping // \n\n#casedeals#iphonecase#smartphonecases#samsungcases#xia… https://t.co/dUFK2L9Cat","lng":-3.74922}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ee9"},"lat":42.81205780000001,"country":"United States","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":-86.0158654}
+
+,{"_id":{"$oid":"5ac2272247ad930273770eea"},"lat":6.6079545,"country":"Nigeria","tweet":"RT @MrOladejo: iPhone 6 128gig for sale. Kindly help me retweet my buyer might be on your TL https://t.co/QDDIs3j3tB","lng":3.6217802}
+
+,{"_id":{"$oid":"5ac2272247ad930273770eeb"},"lat":36.153315,"country":"United States","tweet":"Top 8 #iPhone #App development tools for #SEO specialists #seo #seoexpert #seoagency #seomarketing #googleseo… https://t.co/n2NNJfG0CA","lng":-95.971261}
+
+,{"_id":{"$oid":"5ac2272247ad930273770eec"},"lat":37.09024,"country":"United States","tweet":"RT @JeanineDeal: Can Cellphones Cause Cancer? Experts Surprised By Latest \"Clear Evidence\" Tests https://t.co/hbbQo1Ayvi\n#Wireless #Microwa…","lng":-95.712891}
+
+,{"_id":{"$oid":"5ac2272247ad930273770eed"},"lat":-33.9248685,"country":"South Africa","tweet":"RT @AB_Spice: Slandering Black Coffee from an IPhone with Nike’s on your feet","lng":18.4240553}
+
+,{"_id":{"$oid":"5ac2272247ad930273770eee"},"lat":25.7616798,"country":"United States","tweet":"RT @MrOladejo: iPhone 6 128gig for sale. Kindly help me retweet my buyer might be on your TL https://t.co/QDDIs3j3tB","lng":-80.1917902}
+
+,{"_id":{"$oid":"5ac2272247ad930273770eef"},"lat":37.566535,"country":"South Korea","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":126.9779692}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ef0"},"lat":39.2478041,"country":"United States","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":-92.3248488}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ef1"},"lat":20.593684,"country":"India","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":78.96288}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ef2"},"lat":9.081999,"country":"Nigeria","tweet":"RT @MrOladejo: iPhone 6 128gig for sale. Kindly help me retweet my buyer might be on your TL https://t.co/QDDIs3j3tB","lng":8.675277}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ef3"},"lat":12.879721,"country":"Philippines","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":121.774017}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ef4"},"lat":35.6938401,"country":"Japan","tweet":"iPhone app “sushi book” is on sale now! https://t.co/KoKFvMqsPV #sushi #Japan #app","lng":139.7035494}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ef5"},"lat":37.09024,"country":"United States","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":-95.712891}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ef6"},"lat":50.5356779,"country":"Germany","tweet":"@nicksappleworld What I‘ve only seen so far:\n\niPhone 6 on iOS 8.3\niPhone 6s Plus on iOS 9.3.5.","lng":9.7200616}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ef7"},"lat":-4.4420385,"country":"Brazil","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":-61.32685350000001}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ef8"},"lat":6.8959293,"country":"Nigeria","tweet":"RT @MrOladejo: iPhone 6 128gig for sale. Kindly help me retweet my buyer might be on your TL https://t.co/QDDIs3j3tB","lng":4.893562699999999}
+
+,{"_id":{"$oid":"5ac2272247ad930273770ef9"},"lat":23.69781,"country":"Taiwan","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":120.960515}
+
+,{"_id":{"$oid":"5ac2272247ad930273770efa"},"lat":-6.9174639,"country":"Indonesia","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":107.6191228}
+
+,{"_id":{"$oid":"5ac2272247ad930273770efb"},"lat":-12.0463731,"country":"Peru","tweet":"RT @EXOGlobal: [STREAMLINK] 180402 ‘The Miracle We Met' First Episode Broadcast @ 10PM KST - Kai\n\n🐻 https://t.co/fsAqSRRjdn\n🐻 https://t.co/…","lng":-77.042754}
+
+,{"_id":{"$oid":"5ac2272247ad930273770efc"},"lat":52.1044383,"country":"Poland","tweet":"RT @9to5toys: Amazon has Apple's official leather iPhone X cases from $32 in various colors https://t.co/gKRcpzCfba https://t.co/J83snscwMY","lng":20.6350924}
+
+,{"_id":{"$oid":"5ac2272247ad930273770efd"},"lat":38.963745,"country":"Turkey","tweet":"DO NOT MISS THIS Website, Best of High Quality Products Apple iPhone SE 16GB 32GB 64GB (UNLOCKED) T-Mobile AT\u0026amp;T Ro https://t.co/vfFN1VmoSR","lng":35.243322}
+
+,
+﻿
+
+         ]
+
+    </script>
+
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+
+    </script>
+
+    <script async defer
+
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr-5LLdgx5jMA-WNZh22sBBbneTttxfF0&callback=initMap">
+
+    </script>
+
+  </body>
+
+</html>
+
